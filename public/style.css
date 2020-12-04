@@ -1,7 +1,4 @@
-#down {
-	margin-left: 20px;
 
-}
 
 button {   
 	 display: inline-block;    
@@ -19,17 +16,14 @@ button:active {
 	color: #f4f5f6;}
 
 
-/* Reusable row */
-.row:before,
-.row:after {
-    content:"";
-    display:table;
-}
-.row:after { clear:both; }
-/* Reusable column */
-.col {
-	display: block;
-	float:left;
-	margin: 1% 0 1% 1.6%;
-}
-.col:first-child { margin-left: 0; }
+.low-usage {
+		color: green;
+	  		}
+	  
+.medium-usage {
+		color: black;
+	  		}
+	  
+.high-usage {
+		color: red;
+	  		}
