@@ -1,11 +1,20 @@
 $(document).ready(function() {
 
-$('#current-city').change(function() { 
-	var city = $('#current-city').val();
-	$.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=6ea521e50cfe7612e4494d54cddb44b9&units=metric', function(data) {
-		$('#current-temperature').text(data.main.temp);
-	})
-})
+	function displayWeather(city) {
+		var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+		var token = '&appid=6ea521e50cfe7612e4494d54cddb44b9';
+		var units = '&units=metric';
+		$.get(url + token + units, function(data) { 
+			$('#current-temperature').text(data.main.temp);
+		})
+	}
+
+		displayWeather('London');
+			$('#select-city').submit(function(event) {
+				event.preventDefault();
+				var city = $('#current-city').val();
+				displayWeather(city);
+			})
 
     let thermostat = new Thermostat();
 		
